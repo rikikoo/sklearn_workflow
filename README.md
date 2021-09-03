@@ -100,7 +100,7 @@ for col in df.columns:
 ## 5. [Scale data](https://scikit-learn.org/stable/modules/preprocessing.html#preprocessing-data)
 Some models assume normally distributed data, i.e. zero mean and unit variance
 
-Used by e.g. LogisticRegression or SVC
+### Used by e.g. LogisticRegression or SVC
 ```python
 from sklearn import preprocessing
 
@@ -108,7 +108,7 @@ scaler = preprocessing.StandardScaler().fit(df)
 scaled_data = scaler.transform(df)
 ```
 
-Or to do the above easier, use a pipeline
+### Or to do the above easier, use a pipeline
 ```python
 from sklearn.pipeline import make_pipeline
 
@@ -119,7 +119,7 @@ pipe.fit(df)
 ## 6. Build model
 Once you have formatted the data to build a model out of...
 
-Split data
+### Split data
 ```python
 from sklearn.cross_validation import train_test_split
 
@@ -129,7 +129,7 @@ y = df['labels']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 ```
 
-Select model
+### Select model
 - predicts a datapoint's target **value** based on coefficients constructed out of its other features:
 `sklearn.linear_model.LinearRegression`
 
@@ -148,7 +148,7 @@ or (  `sklearn.model_selection.GridSearchCV` recommended: )
 `sklearn.ensemble.RandomForestClassifier(n_estimators=x)`
 
 
-Fit data and get predictions
+### Fit data and get predictions
 ```python
 model_instance.fit(X_test)
 predictions = model_instance.predict()
